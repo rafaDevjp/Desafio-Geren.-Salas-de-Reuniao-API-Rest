@@ -1,13 +1,17 @@
 package one.innovation.digital.gerenciadorSalas.model;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "meetingRoom")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "meetingRoom")
 public class Room {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,16 +27,10 @@ public class Room {
         private String startHour;
 
         @Column(name = "endHour", nullable = false)
-        private String EndHour;
+        private String endHour;
 
 
-    public Room(Long id, String name, String date, String startHour, String endHour) {
-        this.id = id;
-        this.name = name;
-        this.date = date;
-        this.startHour = startHour;
-        EndHour = endHour;
-    }
+
 
 
 
